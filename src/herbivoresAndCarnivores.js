@@ -16,9 +16,9 @@ class Herbivore extends Animal {
     super(name);
     this.hidden = false;
 
-    Animal.alive.forEach((element) => {
-      if (element.name === this.name) {
-        element['hidden'] = this.hidden;
+    Animal.alive.forEach((animal) => {
+      if (animal === this) {
+        animal['hidden'] = this.hidden;
       }
     });
   }
@@ -26,9 +26,9 @@ class Herbivore extends Animal {
   hide() {
     this.hidden = true;
 
-    Animal.alive.forEach((element) => {
-      if (element.name === this.name) {
-        element['hidden'] = this.hidden;
+    Animal.alive.forEach((animal) => {
+      if (animal === this) {
+        animal['hidden'] = this.hidden;
       }
     });
   }
